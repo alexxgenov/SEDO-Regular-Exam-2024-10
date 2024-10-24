@@ -1,4 +1,4 @@
-name: my_exam_project
+name: my_exam_project_unit_test
 
 on:
   push:
