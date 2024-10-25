@@ -37,12 +37,4 @@ pipeline {
         }
     }
 
-    post {
-              success {
-            echo 'Build and tests succeeded.'
-        }
-        failure {
-            echo 'Build or tests failed.'
-        }
-    }
 }
