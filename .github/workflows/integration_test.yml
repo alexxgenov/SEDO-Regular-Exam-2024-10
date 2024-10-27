@@ -1,4 +1,4 @@
-name: my_exam_project_integration_test
+name: build and run integration tests
 
 on:
   push:
@@ -7,12 +7,13 @@ on:
   #   branches: [ "main" ]
 
 jobs:
-  build:
+  build_integration_tests:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: checkout repo
+      uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -21,5 +22,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
+    - name: Run integration tests
       run: dotnet test --no-build --verbosity normal
